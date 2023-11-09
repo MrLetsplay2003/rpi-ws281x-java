@@ -118,7 +118,7 @@ tasks.buildNativeOnPi.finalizedBy('finalizeBuildNative')
 task buildNativeLib(type: Exec) {
     description = "Build the native libraries for arm"
 
-    commandLine 'sh', '-c', 'mkdir -p build/nativeLib && sh src/scripts/createNativeLibLocal.sh'
+    commandLine 'bash', '-c', 'mkdir -p build/nativeLib && bash src/scripts/createNativeLibLocal.sh'
 }
 
 compileJava.dependsOn buildNativeLib
