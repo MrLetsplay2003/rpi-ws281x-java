@@ -182,11 +182,12 @@ publishing {
     }
     repositories {
         maven {
-            url "https://oss.sonatype.org/content/repositories/snapshots"
-            credentials {
-                username sonatypeUsername
-                password sonatypePassword
+            name = "maven"
+            credentials(PasswordCredentials) {
+                username getProjectProperty("MAVEN_USERNAME")
+                password getProjectProperty("MAVEN_PASSWORD")
             }
+            url = getProjectProperty("MAVEN_URL")
         }
     }
 }
