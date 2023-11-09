@@ -12,11 +12,11 @@
 
 // Declare functions which will be exported as anything in the ws2811.h header.
 %{
-#include "../../build/ws281x/ws2811.h"
+#include "../ws2811.h"
 %}
 
 // Process ws2811.h header and export all included functions.
-%include "../../build/ws281x/ws2811.h"
+%include "../native/rpi_ws281x/ws2811.h"
 
 %inline %{
     uint32_t ws2811_led_get(ws2811_channel_t *channel, int lednum)

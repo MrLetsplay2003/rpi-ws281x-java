@@ -1,0 +1,3 @@
+[submodule "src/native/rpi_ws281x"]
+	path = src/native/rpi_ws281x
+	url = https://github.com/MrLetsplay2003/rpi_ws281x.git
