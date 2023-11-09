@@ -80,5 +80,5 @@ echo "Building JNI interface using SWIG..."
 swig -v -java -outdir "${SWIG_OUT_JAVA}" -package "${SWIG_PACKAGE_NAME}" -o "${NATIVE_SRC}/extra/rpi_ws281x_wrap.c" "${SWIG_SRC}/rpi_ws281x.i"
 
 echo "Compiling library..."
-COMPILE_FLAGS="-I/usr/lib/jvm/java-17-openjdk-amd64/include -I/usr/lib/jvm/java-17-openjdk-amd64/include/linux" sh "${NATIVE_SRC}/docker_build.sh"
+CMAKE_EXTRA="-DCMAKE_C_FLAGS='-I/usr/lib/jvm/java-17-openjdk-amd64/include -I/usr/lib/jvm/java-17-openjdk-amd64/include/linux'" sh "${NATIVE_SRC}/docker_build.sh" "apt install -y openjdk-17-jdk"
 cp "${NATIVE_SRC}/build.aarch64/libws2811.aarch64.so" build/nativeLib/libws281x.so
