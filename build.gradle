@@ -184,10 +184,10 @@ publishing {
         maven {
             name = "maven"
             credentials(PasswordCredentials) {
-                username getProjectProperty("MAVEN_USERNAME")
-                password getProjectProperty("MAVEN_PASSWORD")
+                username project.property("MAVEN_USERNAME")
+                password project.property("MAVEN_PASSWORD")
             }
-            url = getProjectProperty("MAVEN_URL")
+            url = project.property("MAVEN_URL")
         }
     }
 }
